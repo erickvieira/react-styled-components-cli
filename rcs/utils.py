@@ -1,5 +1,8 @@
 from pathlib import Path
 from templates import component, index, styles, context
+from load_config import load_config
+
+ext = 'jsx' if load_config()['is_jsx'] else 'tsx'
 
 def create_dir(dir_name='', super_dir=None):
   if not dir_name:
@@ -9,9 +12,9 @@ def create_dir(dir_name='', super_dir=None):
     if super_dir:
       main_dir = Path('.') / f'{super_dir}'
       main_dir.mkdir(exist_ok=True)
-      output_dir = main_dir / f'{dir_name}'
+      output_dir = main_dir / f'{dir_name.capitalize()}'
     else :
-      output_dir = Path('.') / f'{dir_name}'
+      output_dir = Path('.') / f'{dir_name.capitalize()}'
     output_dir.mkdir(exist_ok=True)
     return output_dir
 
@@ -19,9 +22,9 @@ def create_components(c_name='', dir_path=Path('.') / f'file', is_native=False):
   if not dir_path:
     raise Exception('failed to find a path to create components')
   else:
-    component_filename = '%s.tsx' % c_name.capitalize()
-    index_filename = 'index.tsx'
-    styles_filename = '%s.styles.tsx' % c_name.capitalize()
+    component_filename = '%s.%s' % (c_name.capitalize(), ext)
+    index_filename = 'index.%s' % (ext)
+    styles_filename = '%s.styles.%s' % (c_name.capitalize(), ext)
     # ---
     component_path = dir_path / component_filename
     index_path = dir_path / index_filename
@@ -39,7 +42,7 @@ def create_context(ctx_name='', dir_path=Path('.') / f'file'):
   if not dir_path:
     raise Exception('failed to find a path to create components')
   else:
-    ctx_filename = '%sContext.tsx' % ctx_name.capitalize()
+    ctx_filename = '%sContext.%s' % (ctx_name.capitalize(), ext)
     ctx_path = dir_path / ctx_filename
     with ctx_path.open("w", encoding="utf-8") as ctxff:
       ctxff.write(context(ctx_name))

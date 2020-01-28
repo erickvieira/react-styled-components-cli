@@ -15,13 +15,14 @@ def index(name):
 
 def styles(is_native=False): 
   from_path = '/native' if is_native else ''
-  native_import = 'import { View } from "react-native";\n\n' if is_native else '\n'
-  styled_element = 'View' if is_native else 'div'
+  styled_element = 'Text' if is_native else 'div'
   return 'import styled from "styled-components%s";\n'\
-  '%s'\
+  '\n'\
   'export const Container = styled.%s`\n'\
+  '  color: rebeccapurple;\n'\
+  '  font-size: 24px;\n'\
   '  /* your styles go here */\n'\
-  '`;\n' % (from_path, native_import, styled_element)
+  '`;\n' % (from_path, styled_element)
 
 def context(name):
   n_cap = name.capitalize()
