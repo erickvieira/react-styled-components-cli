@@ -5,16 +5,17 @@ from load_config import load_config
 ext = 'jsx' if load_config()['is_jsx'] else 'tsx'
 
 def create_dir(dir_name='', super_dir=None):
+  root_path = '.' if ext == 'jsx' else './src'
   if not dir_name:
     raise Exception('cant find or create folder without dir_name')
   else:
     output_dir = None
     if super_dir:
-      main_dir = Path('.') / f'{super_dir}'
+      main_dir = Path(root_path) / f'{super_dir}'
       main_dir.mkdir(exist_ok=True)
       output_dir = main_dir / f'{dir_name.capitalize()}'
     else :
-      output_dir = Path('.') / f'{dir_name.capitalize()}'
+      output_dir = Path(root_path) / f'{dir_name.capitalize()}'
     output_dir.mkdir(exist_ok=True)
     return output_dir
 
