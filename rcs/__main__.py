@@ -1,17 +1,48 @@
 #!/bin/python3
-import sys
-from utils import create_components, create_dir
+from time import sleep
+from sys import argv
+from utils import create_components, create_dir, create_context
 
-[ c_name, modfier, mod_value ] = [ None, None, None ]
+[ type, c_name, is_native ] = [None, None, False]
+dir_path = None
 
-if sys.argv and len(sys.argv) > 1:
-  c_name = sys.argv[1]
-if len(sys.argv) > 2:
-  modfier = sys.argv[2]
-if len(sys.argv) > 3:
-  mod_value = sys.argv[3]
+if argv and len(argv) > 1:
+  type = argv[1].lower()
+if len(argv) > 2:
+  c_name = argv[2].lower()
+if len(argv) > 3:
+  is_native = argv[3] == '-rn'
 
-print(c_name)
+if not c_name:
+  c_name = type
+  print('Generating: %s component' % c_name)
+else:
+  print('Generating: %s %s' % (c_name, { 'p': 'page', 'c': 'component', 'ctx': 'context' }[type]))
 
-dir_path = create_dir(c_name)
-create_components(c_name, dir_path)
+def loading():
+  dots = ['.' for i in range(0, 5) ]
+  for dot in dots:
+    sleep(0.2)
+    print(dot)
+
+loading()
+
+final_path = None
+
+if type and type == 'p':
+  dir_path = create_dir(c_name, 'pages')
+  final_path = create_components('%s.page' % c_name, dir_path, is_native)
+elif type and type == 'c':
+  dir_path = create_dir(c_name, 'components')
+  final_path = create_components(c_name, dir_path, is_native)
+elif type and type == 'ctx':
+  dir_path = create_dir('contexts')
+  final_path = create_context(c_name, dir_path)
+else:
+  dir_path = create_dir(c_name)
+  final_path = create_components(c_name, dir_path)
+
+if final_path:
+  print('%s was successful created!' % final_path)
+else:
+  print('Sorry :(, a unhandled error occurred while creating your files.')
