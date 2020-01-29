@@ -39,6 +39,6 @@ Type "help", "copyright", "credits" or "license" for more information.
 > **File content**: {"is_native": false, "is_jsx": true}  
 <small>I hope you are familiar with the JSON syntax. Good luck.</small>
 
-5. THERE ARE NO 5. THATS ALL!!! 🎆😄 Type `rcs help` and reed the docs.
+5. THERE ARE NO 5. THATS ALL!!! 🎆😄 Type `rcs help` and read the docs.
 
 [MIT](https://opensource.org/licenses/MIT) © [Erick Vieira](erickvieira.dev) | 2020
