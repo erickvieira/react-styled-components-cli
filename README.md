@@ -25,7 +25,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 \>>>  
   
 ... so Python 3 is installed. You can just follow the other steps.  
-<small style="float: right;">Hit `Ctrl + D` to close the python CLI. You wellcome.</small>  
+<small style="float: right;">Hit `Ctrl + D` to close the python CLI. You welcome.</small>  
 
 ### Alright, the steps:
 1. Clone or download this repo.
