@@ -11,7 +11,7 @@ The *rcs* CLI automates the creation of React Functional Components using the fo
 </code></pre>
 
 ### ⚠️⚠️⚠️ THIS IS NOT A CLI FOR ALL USE CASES ⚠️⚠️⚠️
-The main objective is provide a CLI for thoses who want a easy way to create React.FC inside isolated directories. If you don`t want to follow this pattern, this is not a good choice.  
+The main objective is provide a CLI for those who want a easy way to create React.FC inside isolated directories. If you don`t want to follow this pattern, this is not a good choice.  
 
 ### YES! THIS IS A VERY **VERY** SPECIFIC CLI 🤷‍♂
 Probably this pattern do not fit for anyone else. Who cares? 😅 Feel free to fork this and customize to suit your own needs.
