@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+# !/usr/bin/env bash
 if [ "$RCS_DIR" != "" ]; then
   echo 'Skiping: already installed'
 else
@@ -11,7 +11,14 @@ else
     echo ''
     echo 'clear'
   }
-  install >> ~/.zshrc && source ~/.zshrc
+  curr_shell_parts=($(echo $SHELL | tr "/" "\n"))
+  size=${#curr_shell_parts[@]}
+  curr_shell="${curr_shell_parts[$size]}"
+  if [ "$curr_shell" != "zsh" ]; then
+    install >> ~/.bashrc && source ~/.bashrc
+  else
+    install >> ~/.zshrc && source ~/.zshrc
+  fi
   echo 'Success: process complete!'
   echo 'Type "rcs help" to see the commands available.'
 fi
