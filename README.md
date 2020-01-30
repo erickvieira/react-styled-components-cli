@@ -2,12 +2,13 @@
 A CLI to generate components using the [Styled Components](https://styled-components.com) syntax.
 
 The *rcs* CLI automates the creation of React Functional Components using the following pattern:  
-<pre><code>.
-|- components/  
-|  |- Home/
-|  |  |- index.tsx  
-|  |  |- Home.tsx  
-|  |  |- Home.styles.tsx
+<pre><code>./components
+└── Home
+    ├── Home.jsx
+    ├── Home.styles.jsx
+    └── index.jsx
+
+1 directory, 3 files
 </code></pre>  
 It suports React and React Native and you can decide if want to use `.tsx` or `.jsx` as default extension.  
 There are some examples of the generated files:  
