@@ -47,14 +47,14 @@ Probably this pattern do not fit to anybody. Feel free to fork this and customiz
 
 # Instalation
 ### Prerequisites
-- You will need to install [Python 3 🐍](https://www.python.org/downloads/). The good news: Linux already has it by default! Try running `python3` in your terminal. If it prints something like this:
+You will need to install [Python 3 🐍](https://www.python.org/downloads/). The good news: Linux already has it by default! Try running `python3` in your terminal. If it prints something like this:
 > Python 3.7.3 (default, Apr  3 2019, 05:39:12)   
 [GCC 8.3.0] on linux  
 Type "help", "copyright", "credits" or "license" for more information.  
 \>>>  
   
 ... so Python 3 is installed. You can just follow the other steps.  
-_Use `Ctrl + D` to close the python CLI. You welcome._
+_Use `Ctrl + D` to close the python CLI. You welcome._ 😉
 
 ### Alright, the steps:
 1. Clone or download this repo.
