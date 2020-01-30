@@ -35,7 +35,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 > **Optionally** you can just run `python3 rcs c MyComponent` in your cloned directory and copy/paste the files to another location. You decide.
   
-4. Finally, to use this CLI, you will need to create a file named as `rcs.conf.json` in the root path of your React projects. This file will contains the default flags for the CLI. It will not work as expected if you did not create the file.
+4. Finally, to use this CLI, you will need to create a file named as `rcs.conf.json` in the root path of your React projects. This file will contains the default flags for the CLI. It will not work as expected if the file is not present in root.
 > **File content example**: {"is_native": false, "is_jsx": true}
 
 ### Type `rcs help` and read the docs.
