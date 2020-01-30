@@ -8,7 +8,36 @@ The *rcs* CLI automates the creation of React Functional Components using the fo
 |  |  |- index.tsx  
 |  |  |- Home.tsx  
 |  |  |- Home.styles.tsx
-</code></pre>
+</code></pre>  
+It suports React and React Native and you can decide if want to use `.tsx` or `.jsx` as default extension.  
+There are some examples of the generated files:  
+> Home.jsx  
+<pre><code>import React from "react";
+import { Container } from "./Home.styles";
+
+export default function() {
+  return (
+    < Container >
+      Home is ready!
+    < /Container >
+  );
+}
+
+</code></pre>  
+> Home.styles.jsx
+<pre><code>import styled from "styled-components";
+
+export const Container = styled.div`
+  color: rebeccapurple;
+  font-size: 24px;
+  /* your styles go here */
+`;
+
+</code></pre>  
+> index.jsx
+<pre><code>export { default } from "./Home";
+
+</code></pre>  
 
 ### ⚠️⚠️⚠️ THIS IS NOT A CLI FOR ALL USE CASES ⚠️⚠️⚠️
 The main purpose is provide a CLI for those who want a easy way to create React.FC inside isolated directories. If you do not want to follow this pattern, this is not a good choice.  
